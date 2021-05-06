@@ -48,16 +48,16 @@ If you assembled it yourself, Check the connections in the MicroSD Socket.  Make
 
   * With a multimeter in continuity mode, check the following pins on the SD card slot, make sure they contact the pins correct pins on the bluepill.  
   
-  | SD Socket Pin  | BluePill Pin |
-  | ------------- | ------------- |
-  | 1  | Not Connected |
-  | 2 | A6 |
-  | 3 | Ground |
-  | 4 | A5 |
-  | 5 | 3.3V |
-  | 6 | A7 |
-  | 7 | A4 |
-  | 8 | Not Connected |
+| SD Slot | BluePill |
+|---------|----------|
+| 1       | N/C      |
+| 2       | A6       |
+| 3       | Gnd      |
+| 4       | A5       |
+| 5       | 3.3V     |
+| 6       | A7       |
+| 7       | A4       |
+| 8       | N/C      |
   
      * Pin 1- NC  
      * Pin 2- A6
