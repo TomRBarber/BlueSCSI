@@ -47,26 +47,23 @@ If you assembled it yourself, Check the connections in the MicroSD Socket.  Make
 •Make sure that the outside of the shield is properly soldered down
 
   * With a multimeter in continuity mode, check the following pins on the SD card slot, make sure they contact the pins correct pins on the bluepill.  
-  
-| SD Slot | BluePill |
-|---------|----------|
-| 1       | N/C      |
-| 2       | A6       |
-| 3       | Gnd      |
-| 4       | A5       |
-| 5       | 3.3V     |
-| 6       | A7       |
-| 7       | A4       |
-| 8       | N/C      |
-  
-     * Pin 1- NC  
-     * Pin 2- A6
-     * Pin 3- Gnd
-     * Pin 4- A5
-      * Pin 5- 3.3v
-     * Pin 6- A7
-     * Pin 8- A4
-     * Pin 9- NC
+
+
+|=======================
+|SD Socket|BluePill 
+|1    |N/C
+|2    |A6 
+|3    |Gnd
+|4    |A5
+|5    |3.3V
+|6    |A7
+|7    |A4
+|8    |N/C
+|=======================
+
+<labelled picture of SD socket and pin numbers)
+
+
   * Make sure no 2 pins are shorting against each other. 
   * Make sure all Flux is cleaned off the board, a toothbrush with rubbing alcohol on it tends to work well.
   * SD Cards need to be either ExFAT or Fat32 formatted(ExFAT gives better performance).  They must be using MBR, not GPT or Apple partition scheme.  
