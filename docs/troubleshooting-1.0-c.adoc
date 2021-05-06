@@ -1,24 +1,67 @@
-# Troubleshooting 1.0-c
-:toc: macro
+# Troubleshooting
 
-## Review the LOG.txt
+## General:
+  * Double check solder connections.  Ensure no solder bridges, cold or broken solder joints, bad solder connections, etc.  If in doubt, can’t hurt to touch it up.
+<insert photos of bad solder, vs good solder>
 
-There should logs that indicate what BlueSCSI did at startup.
+  * Make sure Resistor networks are facing the correct way, and the Bluepill is inserted onto the board with the USB next to the SD.
+<photo of r-nets>
 
-## Green LED Flashes on and off 3x
+  * Check the chip on the Bluepill itself, make sure no solder balls or anything
+<solder ball photo>
 
-This indicates BlueSCSI could not find any files on the SD card or communicate with the SD card.
+  * Clean any excess flux on the board,  even if it says no-clean.  Sometimes that can cause issues.  Rubbing alcohol and a toothbrush is usually a good solution.
 
-Ensure your files are named properly (case sensitive) following the naming convetion in the readme.
+  * Remove the SD card, power it just through MicroUSB or the Berg connector.  It should flash 5x which means no SD card found.  If it doesn’t, that means there’s another problem
 
-If you recived a kit - verify all connections and that the outside of the SD holder is grounded.
+  * Make sure your termination is set correctly.  If it’s the last device on the SCSI chain, you must have termination enabled by having the 2 jumpers connected on the BlueSCSI board itself(Do not change the jumpers on the BluePill board by the reset button, those are used for programming and if set wrong can clear out the BlueSCSI program from the board)
 
-## Slow performance
+  * Make sure there are no conflicting SCSI IDs. If possible, remove any other SCSI devices.
 
-Ensure you are using a good SD card. SD card quality can vary widely. 
+  * If you have another computer to try it on, give it a try on there.
 
-Format your card as ExFat - users have seen quite a jump in performance.
 
-## (Kit Only) Verify you are not using a fake
+## No Power:
+Most computers should provide SCSI termination power through the SCSI cable, which is enough to power the Bluepill(Mac Plus is a known exception unless you do a mod), but it’s entirely possible a computer doesn’t for whatever reason.   Unplug the BlueSCSI from the computer’s SCSI Connection and try to power it either through the MicroUSB port on the BluePill, or 5v through the Berg connector.  If it lights up at all, it’s possible you computer doesn’t provide the correct SCSI termination power.  Double check all your solder joints on the BluePill, SCSI connector, and Resistor networks.  If those are good, you can get a cheap Molex to Floppy(Berg) power connector and use it that way.
 
-https://github.com/keirf/Greaseweazle/wiki/STM32-Fakes[How to tell if your STM32 is fake]
+Also ensure that nothing on the BlueSCSI has been shorted out at all.  Any time you’re working on it make sure any headers from components aren’t resting on a conductive surface.
+
+
+## PC13 flashes 3x
+This means that no images could be found.
+
+  * Ensure images are named correctly, such as HD10_512.hda .  Verify that there are no hidden file extensions(Windows and Mac OS like to hide file extensions by default).  Ensure its’s not really HD10_512.hda.img for example
+
+  * Use one of the pre-made images on Macintosh Garden
+
+  * Check the log.txt file on the root of the SD card, that will show specific details about what the BlueSCSI tried to do
+
+
+## PC13 flashes 5x
+This means the SD card cannot be found
+
+If you assembled it yourself, Check the connections in the MicroSD Socket.  Make sure they all look covered with solder, no bridges between contacts, etc
+•Make sure that the outside of the shield is properly soldered down
+
+  * With a multimeter in continuity mode, check the following pins on the SD card slot, make sure they contact the pins correct pins on the bluepill.  
+     * Pin 1- NC  
+     * Pin 2- A6
+     * Pin 3- Gnd
+     * Pin 4- A5
+      * Pin 5- 3.3v
+     * Pin 6- A7
+     * Pin 8- A4
+     * Pin 9- NC
+  * Make sure no 2 pins are shorting against each other. 
+  * Make sure all Flux is cleaned off the board, a toothbrush with rubbing alcohol on it tends to work well.
+  * SD Cards need to be either ExFAT or Fat32 formatted(ExFAT gives better performance).  They must be using MBR, not GPT or Apple partition scheme.  The tool on https://www.sdcard.org/downloads/formatter/ tends to work well.  Chose “Overwrite format”.
+  * If you have another SD card, give that a try.  The card needs to support SPI.  Most do, but it’s possible there are some out there that don’t
+
+
+## PC13 continuously flashes
+This could be 2 things.  If it’s running an older version of the BlueSCSI software, that means no SD card found or an image can’t be loaded.  Follow the steps above.
+It could also mean that it’s running the default “blink” program that often comes loaded on BluePills.  If you purchased the BluePill yourself, make sure you flashed the software.   If you purchased a assembled unit or a kit from someone, it should come pre-flashed with the latest software.  Contact who you bought it from.
+
+
+
+If the troubleshooting above doesn’t work, or there’s another issue.  Join us on Discord and ask in the BlueSCSI-support channel.  It has many contributors of the BlueSCSI project and knowledgable BlueSCSI users
