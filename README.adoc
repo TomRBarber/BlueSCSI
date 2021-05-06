@@ -129,9 +129,9 @@ Try a different SD card. Cheap/old SD cards can affect performance.
 
 ### Version Specific
 
-<<docs/troubleshooting-1.0-b.adoc,Version 1.0-b>>
+<</docs/troubleshooting-1.0-b.adoc,Version 1.0-b>>
 
-<<docs/troubleshooting-1.0-c.adoc,Version 1.0-c>>
+<</docs/troubleshooting-1.0-c.adoc,Version 1.0-c>>
 
 ## Hardware Versions
 
