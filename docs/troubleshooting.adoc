@@ -63,6 +63,15 @@ This could be 2 things.  If it’s running an older version of the BlueSCSI soft
 
 It could also mean that it’s running the default “blink” program that often comes loaded on BluePills.  If you purchased the BluePill yourself, make sure you flashed the software.   If you purchased a assembled unit or a kit from someone, it should come pre-flashed with the latest software.  Contact who you bought it from.  If you messed with the jumpers on the BluePill itself, make sure they are both set to the 0 position(Closest to the MicroUSB port)
 
+## Slow performance
 
+Ensure you are using a good SD card. SD card quality can vary widely. 
+
+Format your card as ExFat - users have seen quite a jump in performance.
+
+
+
+
+## Further troubleshooting
 
 If the troubleshooting above doesn’t work, or there’s another issue.  Join us on Discord and ask in the BlueSCSI-support channel.  It has many contributors of the BlueSCSI project and knowledgable BlueSCSI users
