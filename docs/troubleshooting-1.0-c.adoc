@@ -27,7 +27,7 @@ Most computers should provide SCSI termination power through the SCSI cable, whi
 Also ensure that nothing on the BlueSCSI has been shorted out at all.  Any time you’re working on it make sure any headers from components aren’t resting on a conductive surface.
 
 
-## PC13 flashes 3x
+## PC13 LED flashes 3x
 This means that no images could be found.
 
   * Ensure images are named correctly, such as HD10_512.hda .  Verify that there are no hidden file extensions(Windows and Mac OS like to hide file extensions by default).  Ensure its’s not really HD10_512.hda.img for example
@@ -37,7 +37,7 @@ This means that no images could be found.
   * Check the log.txt file on the root of the SD card, that will show specific details about what the BlueSCSI tried to do
 
 
-## PC13 flashes 5x
+## PC13 LED flashes 5x
 This means the SD card cannot be found
 
 If you assembled it yourself, Check the connections in the MicroSD Socket.  Make sure they all look covered with solder, no bridges between contacts, etc
