@@ -59,8 +59,9 @@ If you assembled it yourself, Check the connections in the MicroSD Socket.  Make
 
 
 ## PC13 continuously flashes
-This could be 2 things.  If it’s running an older version of the BlueSCSI software, that means no SD card found or an image can’t be loaded.  Follow the steps above.
-It could also mean that it’s running the default “blink” program that often comes loaded on BluePills.  If you purchased the BluePill yourself, make sure you flashed the software.   If you purchased a assembled unit or a kit from someone, it should come pre-flashed with the latest software.  Contact who you bought it from.
+This could be 2 things.  If it’s running an older version of the BlueSCSI software, that means no SD card found or an image can’t be loaded.  Follow all the troubleshooting steps in the above sections.
+
+It could also mean that it’s running the default “blink” program that often comes loaded on BluePills.  If you purchased the BluePill yourself, make sure you flashed the software.   If you purchased a assembled unit or a kit from someone, it should come pre-flashed with the latest software.  Contact who you bought it from.  If you messed with the jumpers on the BluePill itself, make sure they are both set to the 0 position(Closest to the MicroUSB port)
 
 
 
