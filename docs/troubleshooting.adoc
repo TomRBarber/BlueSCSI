@@ -1,6 +1,9 @@
 # Troubleshooting
 
 ## General:
+
+  * Do not adjust any jumpers on the BluePill microcontroller itself(the 2 near the USB port).  Those are used for programming the device and can potentially erase the memory
+
   * Double check solder connections.  Ensure no solder bridges, cold or broken solder joints, bad solder connections, etc.  If in doubt, can’t hurt to touch it up.
 <insert photos of bad solder, vs good solder>
 
@@ -14,7 +17,7 @@
 
   * Remove the SD card, power it just through MicroUSB or the Berg connector.  It should flash 5x which means no SD card found.  If it doesn’t, that means there’s another problem
 
-  * Make sure your termination is set correctly.  If it’s the last device on the SCSI chain, you must have termination enabled by having the 2 jumpers connected on the BlueSCSI board itself(Do not change the jumpers on the BluePill board by the reset button, those are used for programming and if set wrong can clear out the BlueSCSI program from the board)
+  * Make sure your termination is set correctly.  If it’s the last device on the SCSI chain, you must have termination enabled by having the 2 jumpers on the BlueSCSI board near the SCSI port and resistor networks.
 
   * Make sure there are no conflicting SCSI IDs. If possible, remove any other SCSI devices.
 
@@ -32,9 +35,9 @@ This means that no images could be found.
 
   * Ensure images are named correctly, such as HD10_512.hda .  Verify that there are no hidden file extensions(Windows and Mac OS like to hide file extensions by default).  Ensure its’s not really HD10_512.hda.img for example
 
-  * Use one of the pre-made images on Macintosh Garden
+  * Use one of the pre-made images on Macintosh Garden <link>
 
-  * Check the log.txt file on the root of the SD card, that will show specific details about what the BlueSCSI tried to do
+  * Check the LOG.txt file on the root of the SD card, that will show specific details about what the BlueSCSI tried to do
 
 
 ## PC13 LED flashes 5x
@@ -44,6 +47,18 @@ If you assembled it yourself, Check the connections in the MicroSD Socket.  Make
 •Make sure that the outside of the shield is properly soldered down
 
   * With a multimeter in continuity mode, check the following pins on the SD card slot, make sure they contact the pins correct pins on the bluepill.  
+  
+  | SD Socket Pin  | BluePill Pin |
+  | ------------- | ------------- |
+  | 1  | Not Connected |
+  | 2 | A6 |
+  | 3 | Ground |
+  | 4 | A5 |
+  | 5 | 3.3V |
+  | 6 | A7 |
+  | 7 | A4 |
+  | 8 | Not Connected |
+  
      * Pin 1- NC  
      * Pin 2- A6
      * Pin 3- Gnd
@@ -54,20 +69,21 @@ If you assembled it yourself, Check the connections in the MicroSD Socket.  Make
      * Pin 9- NC
   * Make sure no 2 pins are shorting against each other. 
   * Make sure all Flux is cleaned off the board, a toothbrush with rubbing alcohol on it tends to work well.
-  * SD Cards need to be either ExFAT or Fat32 formatted(ExFAT gives better performance).  They must be using MBR, not GPT or Apple partition scheme.  The tool on https://www.sdcard.org/downloads/formatter/ tends to work well.  Chose “Overwrite format”.
-  * If you have another SD card, give that a try.  The card needs to support SPI.  Most do, but it’s possible there are some out there that don’t
+  * SD Cards need to be either ExFAT or Fat32 formatted(ExFAT gives better performance).  They must be using MBR, not GPT or Apple partition scheme.  
+  * The tool on https://www.sdcard.org/downloads/formatter/ tends to work well for resolving formatting issues.  Chose the “Overwrite format” option.
+  * If you have another SD card, give that a try.
 
 
 ## PC13 continuously flashes
 This could be 2 things.  If it’s running an older version of the BlueSCSI software, that means no SD card found or an image can’t be loaded.  Follow all the troubleshooting steps in the above sections.
 
-It could also mean that it’s running the default “blink” program that often comes loaded on BluePills.  If you purchased the BluePill yourself, make sure you flashed the software.   If you purchased a assembled unit or a kit from someone, it should come pre-flashed with the latest software.  Contact who you bought it from.  If you messed with the jumpers on the BluePill itself, make sure they are both set to the 0 position(Closest to the MicroUSB port)
+It could also mean that it’s running the default “blink” program that often comes loaded on BluePills.  If you purchased the BluePill yourself, make sure you flashed the software using the flashing procedure<link>.   If you purchased a assembled unit or a kit from someone, it should come pre-flashed with the latest software.  Contact who you bought it from.  If you messed with the jumpers on the BluePill itself, make sure they are both set to the 0 position(Closest to the MicroUSB port)
 
 ## Slow performance
 
-Ensure you are using a good SD card. SD card quality can vary widely. 
+  * Ensure you are using a good SD card. SD card quality can vary widely. 
 
-Format your card as ExFat - users have seen quite a jump in performance.
+  * Format your card as ExFat - users have seen quite a jump in performance.
 
 
 
