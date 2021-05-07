@@ -5,13 +5,19 @@
   * Do not adjust any jumpers on the BluePill microcontroller itself(the 2 near the USB port).  Those are used for programming the device and can potentially erase the memory
 
   * Double check solder connections.  Ensure no solder bridges, cold or broken solder joints, bad solder connections, etc.  If in doubt, can’t hurt to touch it up.
-<insert photos of bad solder, vs good solder>
+
+image::images/SolderExamples.jpg[]
+
+
 
   * Make sure Resistor networks are facing the correct way, and the Bluepill is inserted onto the board with the USB next to the SD.
-<photo of r-nets>
 
-  * Check the chip on the Bluepill itself, make sure no solder balls or anything
-<solder ball photo>
+image::images/orientation.png[]
+
+  * Check the chip on the Bluepill itself, make sure no solder balls or anything(If there are, sometimes you can just knock them off with a small screwdriver or toothpick, sometimes you'll need to use an iron and flux/wick)
+  
+image::images/SolderBridge.jpg[]
+
 
   * Clean any excess flux on the board,  even if it says no-clean.  Sometimes that can cause issues.  Rubbing alcohol and a toothbrush is usually a good solution.
 
@@ -35,7 +41,7 @@ This means that no images could be found.
 
   * Ensure images are named correctly, such as HD10_512.hda .  Verify that there are no hidden file extensions(Windows and Mac OS like to hide file extensions by default).  Ensure its’s not really HD10_512.hda.img for example
 
-  * Use one of the pre-made images on Macintosh Garden <link>
+  * Use one of the pre-made images on Macintosh Garden - https://macintoshgarden.org/apps/bluescsi
 
   * Check the LOG.txt file on the root of the SD card, that will show specific details about what the BlueSCSI tried to do
 
@@ -43,8 +49,10 @@ This means that no images could be found.
 ## PC13 LED flashes 5x
 This means the SD card cannot be found
 
-If you assembled it yourself, Check the connections in the MicroSD Socket.  Make sure they all look covered with solder, no bridges between contacts, etc
-•Make sure that the outside of the shield is properly soldered down
+  * If you assembled it yourself, Check the connections in the MicroSD Socket.  Make sure they all look covered with solder, no bridges between contacts, etc
+  * Make sure that the outside of the shield is properly soldered down
+
+image::images/SDCard.jpg[]
 
   * With a multimeter in continuity mode, check the following pins on the SD card slot, make sure they contact the pins correct pins on the bluepill.  
 
@@ -61,7 +69,7 @@ If you assembled it yourself, Check the connections in the MicroSD Socket.  Make
 |8    |N/C
 |=======================
 
-<labelled picture of SD socket and pin numbers)
+image::images/SDCardPins.jpg[]
 
 
   * Make sure no 2 pins are shorting against each other. 
