@@ -117,9 +117,9 @@ To enable termination place the two jumpers on the TERM block. Termination shoul
 
 ## Troubleshooting
 
-If you assembled it yourself, either through a kit or by sourcing the parts yourself, link:troubleshooting-Kit.adoc[start here]
+If you assembled it yourself, either through a kit or by sourcing the parts yourself, link:docs/troubleshooting-Kit.adoc[start here]
 
-If you purchased a pre-assembled kit, or have already gone through the hardware troubleshooting steps, link:troubleshooting-assembled.adoc[start here]
+If you purchased a pre-assembled kit, or have already gone through the hardware troubleshooting steps, link:docs/troubleshooting-assembled.adoc[start here]
 
 ## Hardware Versions
 
