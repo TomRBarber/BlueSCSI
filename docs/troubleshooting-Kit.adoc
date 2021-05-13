@@ -1,4 +1,4 @@
-# Troubleshooting
+# Troubleshooting - Kit
 
 ## General:
 
@@ -7,8 +7,6 @@
   * Double check solder connections.  Ensure no solder bridges, cold or broken solder joints, bad solder connections, etc.  If in doubt, can’t hurt to touch it up.
 
 image::images/SolderExamples.jpg[]
-
-
 
   * Make sure Resistor networks are facing the correct way, and the Bluepill is inserted onto the board with the USB next to the SD.
 
@@ -20,8 +18,6 @@ image::images/SolderBridge.jpg[]
 
 
   * Clean any excess flux on the board,  even if it says no-clean.  Sometimes that can cause issues.  Rubbing alcohol and a toothbrush is usually a good solution.
-
-  * Remove the SD card, power it just through MicroUSB or the Berg connector.  It should flash 5x which means no SD card found.  If it doesn’t, that means there’s another problem
 
   * Make sure your termination is set correctly.  If it’s the last device on the SCSI chain, you must have termination enabled by having the 2 jumpers on the BlueSCSI board near the SCSI port and resistor networks.
 
@@ -35,21 +31,10 @@ Most computers should provide SCSI termination power through the SCSI cable, whi
 
 Also ensure that nothing on the BlueSCSI has been shorted out at all.  Any time you’re working on it make sure any headers from components aren’t resting on a conductive surface.
 
-
-## PC13 LED flashes 3x
-This means that no images could be found.
-
-  * Ensure images are named correctly, such as HD10_512.hda .  Verify that there are no hidden file extensions(Windows and Mac OS like to hide file extensions by default).  Ensure its’s not really HD10_512.hda.img for example
-
-  * Use one of the pre-made images on Macintosh Garden - https://macintoshgarden.org/apps/bluescsi
-
-  * Check the LOG.txt file on the root of the SD card, that will show specific details about what the BlueSCSI tried to do
-
-
 ## PC13 LED flashes 5x
 This means the SD card cannot be found
 
-  * If you assembled it yourself, Check the connections in the MicroSD Socket.  Make sure they all look covered with solder, no bridges between contacts, etc
+  * Check the connections in the MicroSD Socket.  Make sure they all look covered with solder, no bridges between contacts, etc
   * Make sure that the outside of the shield is properly soldered down
 
 image::images/SDCard.jpg[]
@@ -80,20 +65,14 @@ image::images/SDCardPins.jpg[]
 
 
 ## PC13 continuously flashes
-This could be 2 things.  If it’s running an older version of the BlueSCSI software, that means no SD card found or an image can’t be loaded.  Follow all the troubleshooting steps in the above sections.
+This could be 2 things.  If it’s running an older version of the BlueSCSI software, that means no SD card found or an image can’t be loaded.  Follow the steps in Troubleshooting-Assembled
 
 It could also mean that it’s running the default “blink” program that often comes loaded on BluePills. If you messed with the jumpers on the BluePill itself, make sure they are both set to the 0 position(Closest to the MicroUSB port).  If you purchased the BluePill yourself, make sure you flashed the software using the https://github.com/erichelgeson/BlueSCSI#flashing[flashing procedure].   
-If you purchased a assembled unit or a kit from someone, it should come pre-flashed with the latest software.  Contact who you bought it from.  
-
-## Slow performance
-
-  * Ensure you are using a good SD card. SD card quality can vary widely. 
-
-  * Format your card as ExFat - users have seen quite a jump in performance.
-
-
+If you purchased the kit from an authorized BlueSCSI distributor, it should come pre-flashed with the latest software.  Contact who you bought it from.  
 
 
 ## Further troubleshooting
 
-If the troubleshooting above doesn’t work, or there’s another issue.  Join us on Discord and ask in the BlueSCSI-support channel.  It has many contributors of the BlueSCSI project and knowledgable BlueSCSI users
+If the troubleshooting above doesn’t work, or there’s another issue, check the Troubleshooting-Assembled document
+
+You can also join us on Discord and ask in the BlueSCSI-support channel.  It has many contributors of the BlueSCSI project and knowledgable BlueSCSI users
