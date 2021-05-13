@@ -117,21 +117,9 @@ To enable termination place the two jumpers on the TERM block. Termination shoul
 
 ## Troubleshooting
 
-### Check Log Files
+If you assembled it yourself, either through a kit or by sourcing the parts yourself, link:troubleshooting-Kit.adoc[start here]
 
-If your device is not working - check the `LOG.txt` in the root of the SD card.
-
-### Performance is slower than expected
-
-Use ExFat instead of FAT32
-
-Try a different SD card. Cheap/old SD cards can affect performance.
-
-### Version Specific
-
-<</docs/troubleshooting-1.0-b.adoc,Version 1.0-b>>
-
-<</docs/troubleshooting-1.0-c.adoc,Version 1.0-c>>
+If you purchased a pre-assembled kit, or have already gone through the hardware troubleshooting steps, link:troubleshooting-assembled.adoc[start here]
 
 ## Hardware Versions
 
