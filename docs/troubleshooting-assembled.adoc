@@ -4,24 +4,9 @@
 
   * Do not adjust any jumpers on the BluePill microcontroller itself(the 2 near the USB port).  Those are used for programming the device and can potentially erase the memory
 
-  * Double check solder connections.  Ensure no solder bridges, cold or broken solder joints, bad solder connections, etc.  If in doubt, can’t hurt to touch it up.
+  * If you purchased a kit, first go through the Troubleshooting-Kit document to ensure everything is right with your hardware
 
-image::images/SolderExamples.jpg[]
-
-
-
-  * Make sure Resistor networks are facing the correct way, and the Bluepill is inserted onto the board with the USB next to the SD.
-
-image::images/orientation.png[]
-
-  * Check the chip on the Bluepill itself, make sure no solder balls or anything(If there are, sometimes you can just knock them off with a small screwdriver or toothpick, sometimes you'll need to use an iron and flux/wick)
-  
-image::images/SolderBridge.jpg[]
-
-
-  * Clean any excess flux on the board,  even if it says no-clean.  Sometimes that can cause issues.  Rubbing alcohol and a toothbrush is usually a good solution.
-
-  * Remove the SD card, power it just through MicroUSB or the Berg connector.  It should flash 5x which means no SD card found.  If it doesn’t, that means there’s another problem
+ * Remove the SD card, power it just through MicroUSB or the Berg connector.  It should flash 5x which means no SD card found.  If it doesn’t, that means there’s another problem
 
   * Make sure your termination is set correctly.  If it’s the last device on the SCSI chain, you must have termination enabled by having the 2 jumpers on the BlueSCSI board near the SCSI port and resistor networks.
 
@@ -31,7 +16,7 @@ image::images/SolderBridge.jpg[]
 
 
 ## No Power:
-Most computers should provide SCSI termination power through the SCSI cable, which is enough to power the Bluepill(Mac Plus is a known exception unless you do a mod), but it’s entirely possible a computer doesn’t for whatever reason.   Unplug the BlueSCSI from the computer’s SCSI Connection and try to power it either through the MicroUSB port on the BluePill, or 5v through the Berg connector.  If it lights up at all, it’s possible you computer doesn’t provide the correct SCSI termination power.  Double check all your solder joints on the BluePill, SCSI connector, and Resistor networks.  If those are good, you can get a cheap Molex to Floppy(Berg) power connector and use it that way.
+Most computers should provide SCSI termination power through the SCSI cable, which is enough to power the Bluepill(Mac Plus is a known exception unless you do a mod), but it’s entirely possible a computer doesn’t for whatever reason.   Unplug the BlueSCSI from the computer’s SCSI Connection and try to power it either through the MicroUSB port on the BluePill, or 5v through the Berg connector.  If it lights up at all, it’s possible you computer doesn’t provide the correct SCSI termination power.  If that's the case, you can get a cheap Molex to Floppy(Berg) power connector and use it that way, or power it through USB
 
 Also ensure that nothing on the BlueSCSI has been shorted out at all.  Any time you’re working on it make sure any headers from components aren’t resting on a conductive surface.
 
@@ -49,31 +34,6 @@ This means that no images could be found.
 ## PC13 LED flashes 5x
 This means the SD card cannot be found
 
-  * If you assembled it yourself, Check the connections in the MicroSD Socket.  Make sure they all look covered with solder, no bridges between contacts, etc
-  * Make sure that the outside of the shield is properly soldered down
-
-image::images/SDCard.jpg[]
-
-  * With a multimeter in continuity mode, check the following pins on the SD card slot, make sure they contact the pins correct pins on the bluepill.  
-
-
-|=======================
-|SD Socket|BluePill 
-|1    |N/C
-|2    |A6 
-|3    |Gnd
-|4    |A5
-|5    |3.3V
-|6    |A7
-|7    |A4
-|8    |N/C
-|=======================
-
-image::images/SDCardPins.jpg[]
-
-
-  * Make sure no 2 pins are shorting against each other. 
-  * Make sure all Flux is cleaned off the board, a toothbrush with rubbing alcohol on it tends to work well.
   * SD Cards need to be either ExFAT or Fat32 formatted(ExFAT gives better performance).  They must be using MBR, not GPT or Apple partition scheme.  
   * The tool on https://www.sdcard.org/downloads/formatter/ tends to work well for resolving formatting issues.  Chose the “Overwrite format” option.
   * If you have another SD card, give that a try.
