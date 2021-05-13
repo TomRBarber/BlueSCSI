@@ -73,6 +73,6 @@ If you purchased the kit from an authorized BlueSCSI distributor, it should come
 
 ## Further troubleshooting
 
-If the troubleshooting above doesn’t work, or there’s another issue, check the Troubleshooting-Assembled document
+If the troubleshooting above doesn’t work, or there’s another issue, check the link:troubleshooting-assembled.adoc[Troubleshooting-Assembled] document
 
 You can also join us on Discord and ask in the BlueSCSI-support channel.  It has many contributors of the BlueSCSI project and knowledgable BlueSCSI users
