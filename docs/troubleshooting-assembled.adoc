@@ -4,7 +4,7 @@
 
   * Do not adjust any jumpers on the BluePill microcontroller itself(the 2 near the USB port).  Those are used for programming the device and can potentially erase the memory
 
-  * If you purchased a kit, first go through the link:troubleshooting-kit.adoc[Troubleshooting-Kit] document to ensure everything is right with your hardware
+  * If you purchased a kit, first go through the link:troubleshooting-Kit.adoc[Troubleshooting-Kit] document to ensure everything is right with your hardware
 
  * Remove the SD card, power it just through MicroUSB or the Berg connector.  It should flash 5x which means no SD card found.  If it doesn’t, that means there’s another problem
 
